@@ -135,7 +135,7 @@ If your interface is <strong>wlan0</strong> and ip <strong>10.0.5.0</strong>, cr
 bind-interfaces
 listen-address=<strong>10.0.5.1</strong>
 no-hosts
-dhcp-range=<strong>10.0.5.32,10.0.5.63</strong>
+dhcp-range=<strong>10.0.5.32,10.0.5.254</strong>
 dhcp-option=option:router,<strong>10.0.5.1</strong>
 
 <strong>nano /etc/systemd/system/dnsmasq@.service</strong>
