@@ -82,7 +82,7 @@ otherwise create a file with extension .conf like:
 <pre>
 <strong>nano /etc/NetworkManager/conf.d/00-unmanaged.conf</strong>
 [keyfile]
-unmanaged-devices=interface-name:enp4s0
+unmanaged-devices=interface-name:wlan0
 
 <strong>systemctl restart NetworkManager.service</strong>
 </pre>
