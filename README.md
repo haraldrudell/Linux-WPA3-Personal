@@ -37,7 +37,7 @@ ieee80211w=2
 
 If it is usb, it should be recognized by `lsusb` You can monitor how the command output changes in order to detect it
 
-Most other adapters appear using `lspci` In edge cases us `lshw`
+Most other adapters appear using `lspci` In edge cases use `lshw`
 
 This will give you the vendor and product id which is a two-value hexadecimal number like 846:9053
 
