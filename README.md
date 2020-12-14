@@ -47,7 +47,7 @@ phy2 is your device. To see everything it can do, about 200 lines: `iw phy2 info
 
 All network interfaces are listed by `ip l`
 
-Once can also examine which driver claims a certain vendor and product:
+One can also examine which driver claims a certain vendor and product:
 <pre>
 <strong>modprobe --showconfig | grep v0846p9053</strong>
 alias usb:v0846p9053d*dc*dsc*dp*ic*isc*ip*in* mt76x2u
