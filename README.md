@@ -119,12 +119,22 @@ Name=<strong>wlan0</strong>
 RequiredForOnline=no
 [Network]
 ConfigureWithoutCarrier=true
-Address=<strong>10.0.5.0</strong>/24
+Address=<strong>10.0.5.1</strong>/24
 
 <strong>systemctl reload systemd-networkd</strong>
 </pre>
 
 `ip a` should now show that the interface has an ip address
+
+<pre>
+<strong>ip a s dev wlan0</strong>
+7: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 2312 qdisc mq state UP group default qlen 1000
+    link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
+    inet <strong>10.0.5.1/24</strong> brd 10.0.5.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::847b:41ff:fe34:da20/64 scope link 
+       valid_lft forever preferred_lft forever
+</pre>
 
 ## Get dhcp and dns
 
@@ -157,7 +167,13 @@ WantedBy=multi-user.target
 <strong>systemctl start dnsmasq@wlan0</strong>
 </pre>
 
-dns and dhcp are now running
+dns and dhcp are now running:
+
+<pre>
+<strong>ps -fCdnsmasq | cat</strong>
+UID          PID    PPID  C STIME TTY          TIME CMD
+nobody     45081       1  0 Dec12 ?        00:00:02 /usr/sbin/dnsmasq --keep-in-foreground --conf-file=/etc/hostapd/wlan0-dnsmasq
+</pre>
 
 ## Start hostapd
 
