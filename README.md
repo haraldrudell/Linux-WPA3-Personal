@@ -41,7 +41,7 @@ Most other adapters appear using `lspci` In edge cases use `lshw`
 
 This will give you the vendor and product id which is a two-value hexadecimal number like 846:9053
 
-## Find Driver
+## Find Network Interface
 
 If the device has a driver, a network interface will appear with a name like wlan0. Wireless devices can be listed with `iw dev` Their names ususally begin with w double-u
 
