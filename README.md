@@ -1,5 +1,18 @@
 # Linux-WPA3-Personal
-**WPA3-Personal** (the most secure as of 2020) Access Point using Linux
+
+This document describes how to set up a WPA3-Personal Access Point using Linux, that can always have the latest security patches applied
+
+**WPA3-Personal** is the only password-based Wi-Fi that as of 2020 is safe to use
+
+WPA3-Personal published in 2018 is supported by Android 10 and macOS Catalina 10.15 or later
+
+## Why is WPA3-Personal more secure?
+
+• sae (explained below) is a safe exchange of secrets with forward secrecy
+
+• sae only connects Access Points and clients that prove to have the secret, thereby mitigating the evil-twin problem
+
+WPA2-Personal does not offer any of the above characteristics, it is unsafe to use without vpn. The intermediate fix for WPA2 is to either always use vpn or to use WPA2-Enterprise eap-tls, everybody else is a victim. Once an attacker is in the WPA2 network which takes only seconds, crafted packets can be sent to any authenticated node exploiting every feature of their typically low-quality software
 
 # Process
 
