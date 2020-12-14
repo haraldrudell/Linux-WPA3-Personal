@@ -12,7 +12,7 @@ WPA3-Personal published in 2018 is supported by Android 10 and macOS Catalina 10
 
 • sae only connects Access Points and clients that prove to have the secret, thereby mitigating the evil-twin problem
 
-WPA2-Personal does not offer any of the above characteristics, it is unsafe to use without vpn. The intermediate fix for WPA2 is to either always use vpn or to use WPA2-Enterprise eap-tls, everybody else is a victim. Once an attacker is in the WPA2 network which takes only seconds, crafted packets can be sent to any authenticated node exploiting every feature of their typically low-quality software
+WPA2-Personal does not offer any of the above characteristics, it is unsafe to use at all without vpn. The intermediate fix for WPA2 is to always use WPA2-Enterprise eap-tls, everybody else is a victim. Once an attacker is in the WPA2 network which takes only seconds, crafted packets can be sent to any authenticated node exploiting every feature of their typically low-quality software
 
 # Process
 
