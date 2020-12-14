@@ -32,6 +32,19 @@ This will give you the vendor and product id which is a two-value hexadecimal nu
 
 If the device has a driver, a network interface will appear with a name like wlan0. Wireless devices can be listed with `iw dev` Their names ususally begin with w double-u
 
+<pre>
+<strong>iw dev</strong>
+phy#2
+        Interface wlan0
+                ifindex 7
+                wdev 0x200000001
+                addr 00:11:22:33:44:55
+                type managed
+                txpower 20.00 dBm
+</pre>
+
+phy2 is your device. To see everything it can do, about 200 lines: `iw phy2 info`
+
 All network interfaces are listed by `ip l`
 
 Once can also examine which driver claims a certain vendor and product:
@@ -72,6 +85,13 @@ otherwise create a file with extension .conf like:
 unmanaged-devices=interface-name:enp4s0
 
 <strong>systemctl restart NetworkManager.service</strong>
+</pre>
+
+Verify that NetworkManager no longer manages your device:
+<pre>
+<strong>nmcli d s</strong>
+DEVICE           TYPE      STATE         CONNECTION 
+wlan0            wifi      unmanaged     --         
 </pre>
 
 ## Assign IP
