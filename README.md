@@ -165,9 +165,9 @@ Create a file named using your interface **wlan0** and extension .conf:
 also decide on your ssid and password. The password should not be known or guessable to an attacker
 <pre>
 <strong>nano /etc/hostapd/wlan0.conf</strong>
-# directive order from: https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf
-# © 2020-present Harald Rudell <harald.rudell@gmail.com>
-# driver: mt76x2u WPA3-Personal 802.11g
+# © 2020-present Harald Rudell <harald.rudell@gmail.com> (https://haraldrudell.github.io/haraldrudell)
+# 0846:9053 NetGear, Inc. A6210 WPA3-Personal 2.4 GHz 54 Mb/s: 802.11g
+# directive order: https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf
 interface=<strong>wlan0</strong>
 ssid=<strong>anything</strong>
 logger_stdout=63
