@@ -1,4 +1,4 @@
-# Linux-WPA3-Personal
+# WPA3-Personal Wi-Fi Access Point on Linux
 
 This document describes how to set up a WPA3-Personal Access Point using Linux, that can always have the latest security patches applied
 
