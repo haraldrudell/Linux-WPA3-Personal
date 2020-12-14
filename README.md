@@ -22,7 +22,7 @@ ieee80211w=2
 
 ## Plug the Adapter in
 
-If it is usb, it should be recognixed by `lsusb` You can monitor how the command output changes in order to detect it
+If it is usb, it should be recognized by `lsusb` You can monitor how the command output changes in order to detect it
 
 Most other adapters appear using `lspci` In edge cases us `lshw`
 
