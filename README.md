@@ -201,8 +201,8 @@ iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump MARK 
 iptables --insert FORWARD --in-interface eth0 --out-interface wlan0 --match state --state RELATED,ESTABLISHED --jump ACCEPT
 iptables --append FORWARD --jump DROP
 iptables --table nat --insert POSTROUTING --match mark 0x123 --jump MASQUERADE
-</pre>
 echo -n 1 >/proc/sys/net/ipv4/ip_forward
+</pre>
 
 Note: as of Linux 5.4.0, bugs prevents speeds faster than 54 Mb/s 802.11g. NETGEAR A6210 can otherwise do 867 Mb/s on 5 GHz
 
