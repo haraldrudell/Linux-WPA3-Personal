@@ -231,6 +231,13 @@ iptables --table nat --insert POSTROUTING --match mark --mark 0x123 --jump MASQU
 echo -n 1 >/proc/sys/net/ipv4/ip_forward
 </pre>
 
+To see iptable rules, which may be a lot:
+<pre>
+<strong>iptables-save | less</strong>
+…
+</pre>
+
+
 Note: as of Linux 5.4.0, bugs prevents speeds faster than 54 Mb/s 802.11g. NETGEAR A6210 can otherwise do 867 Mb/s on 5 GHz
 
 Updated: 12/13/2020
