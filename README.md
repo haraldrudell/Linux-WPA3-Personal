@@ -200,7 +200,7 @@ iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump ACCEP
 iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump MARK --set-mark 0x123
 iptables --insert FORWARD --in-interface eth0 --out-interface wlan0 --match state --state RELATED,ESTABLISHED --jump ACCEPT
 iptables --append FORWARD --jump DROP
-iptables --table nat --insert POSTROUTING --match mark 0x123 --jump MASQUERADE
+iptables --table nat --insert POSTROUTING --match mark --mark 0x123 --jump MASQUERADE
 echo -n 1 >/proc/sys/net/ipv4/ip_forward
 </pre>
 
