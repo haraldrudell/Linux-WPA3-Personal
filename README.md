@@ -89,7 +89,7 @@ Check for a file to append to:
 
 If /etc/NetworkManager/conf.d does not eixst, move on
 
-in this case, add to the line that already exists
+If the grep comman d above produces output, add to the line that already exists
 
 otherwise create a file with extension .conf like:
 <pre>
