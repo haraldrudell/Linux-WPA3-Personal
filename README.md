@@ -212,7 +212,16 @@ To run your access point:
 
 Access Points under linux are implemented using hostapd: <a href=https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf>hostapd reference</a>
 
-This allows Wi-Fi clients to access the host machine. For clients to access the Internet, ip forwarding and SNAT must be added; a template is here for wi-fi interface wlan0 and Internet interface eth0:
+To see what hostapd is running:
+<pre>
+<strong>ps -fChostapd | cat</strong>
+UID          PID    PPID  C STIME TTY          TIME CMD
+root       44929       1  0 Dec12 ?        00:00:18 /usr/sbin/hostapd -B -P /run/hostapd.pid -B /etc/hostapd/wlan0.conf
+</pre>
+
+
+## Provide Internet Access
+The steps above allows Wi-Fi clients to access the host machine. For clients to access the Internet, ip forwarding and SNAT must be added; a template is here for wi-fi interface wlan0 and Internet interface eth0:
 <pre>
 iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump ACCEPT
 iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump MARK --set-mark 0x123
