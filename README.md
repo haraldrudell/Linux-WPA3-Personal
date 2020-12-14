@@ -43,7 +43,7 @@ phy#2
                 txpower 20.00 dBm
 </pre>
 
-phy2 is your device. To see everything it can do, about 200 lines: `iw phy2 info`
+phy2 is the iw numbering for the device. To see everything it can do, about 200 lines: `iw phy2 info`
 
 All network interfaces are listed by `ip l`
 
