@@ -194,7 +194,15 @@ To run your access point:
 
 Access Points under linux are implemented using hostapd: <a href=https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf>hostapd reference</a>
 
-This allows Wi-Fi clients to access the host machine. For clients to access the Internet, ip forwarding and SNAT must be added; not covered here
+This allows Wi-Fi clients to access the host machine. For clients to access the Internet, ip forwarding and SNAT must be added; a template is here for wi-fi interface wlan0 and Internet interface eth0:
+<pre>
+iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump ACCEPT
+iptables --insert FORWARD --in-interface wlan0 --out-interface eth0 --jump MARK --set-mark 0x123
+iptables --insert FORWARD --in-interface eth0 --out-interface wlan0 --match state --state RELATED,ESTABLISHED --jump ACCEPT
+iptables --append FORWARD --jump DROP
+iptables --table nat --insert POSTROUTING --match mark 0x123 --jump MASQUERADE
+</pre>
+echo -n 1 >/proc/sys/net/ipv4/ip_forward
 
 Note: as of Linux 5.4.0, bugs prevents speeds faster than 54 Mb/s 802.11g. NETGEAR A6210 can otherwise do 867 Mb/s on 5 GHz
 
