@@ -149,7 +149,7 @@ dns and dhcp are now running
 ## Start hostapd
 
 Create a file named using your interface **wlan0** and extension .conf:
-also decide on your ssid and password. The password cannot be known or guessable to an attacker
+also decide on your ssid and password. The password should not be known or guessable to an attacker
 <pre>
 <strong>nano /etc/hostapd/wlan0.conf</strong>
 # directive order from: https://w1.fi/cgit/hostap/plain/hostapd/hostapd.conf
