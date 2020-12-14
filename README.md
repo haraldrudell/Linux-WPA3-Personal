@@ -176,6 +176,23 @@ UID          PID    PPID  C STIME TTY          TIME CMD
 nobody     45081       1  0 Dec12 ?        00:00:02 /usr/sbin/dnsmasq --keep-in-foreground --conf-file=/etc/hostapd/wlan0-dnsmasq
 </pre>
 
+## Unblock the Transmitter
+
+From `iw dev` you have your interface’s phy number
+
+Then verify it to be unblocked using rfkill:
+<pre>
+<strong>rfkill</strong>
+ID TYPE      DEVICE      SOFT      HARD
+ 0 wlan      phy0   unblocked unblocked
+ 1 bluetooth hci0   unblocked unblocked
+ 2 wlan      phy1   unblocked unblocked
+</pre>
+
+• For the line with the phy number, if it says blocked in the HARD column, there is a switch on the computer needing to be toggled
+
+If the SOFT column says blocked, unblock using the number in the ID column: `rfkill unblock 2`
+
 ## Start hostapd
 
 Create a file named using your interface **wlan0** and extension .conf:
