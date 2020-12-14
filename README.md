@@ -139,6 +139,7 @@ Address=<strong>10.0.5.1</strong>/24
 ## Get dhcp and dns
 
 Install dnsmasq and hostapd: `apt install --yes dnsmasq hostapd`
+
 If your interface is <strong>wlan0</strong> and ip <strong>10.0.5.0</strong>, create two files:
 <pre>
 <strong>nano /etc/hostapd/wlan0-dnsmasq</strong>
