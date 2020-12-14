@@ -76,6 +76,17 @@ b43
 </pre>
 The wlp2s0b1 interface was provided by the **b43** driver
 
+If it is a usb device with a known driver name, its connected speed can be displayed:
+
+
+
+<pre>
+<strong>lsusb -t | grep mt76x2u</strong>
+    |__ Port 2: Dev 2, If 0, Class=Vendor Specific Class, Driver=mt76x2u, 5000M
+</pre>
+
+The device claimed by the mt76x2u driver is connected via usb at 5 Gb/s
+
 ## Disable NetworkManager
 
 To use hostapd, the device should not be managed by NetworkManager. You have NetworkManager if the directory /etc/NetworkManager/conf.d exists
